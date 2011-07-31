@@ -11,4 +11,9 @@ public class ProbabilityTest {
 	public void expectationIs0IfAllEstimatesAre0() throws Exception {
 		assertThat(Probability.expectation(0, 0, 0), is(0F));
 	}
+
+	@Test
+	public void expectationIs1IfAllEstimatesAre1() throws Exception {
+		assertThat(Probability.expectation(1, 1, 1), is(1F));
+	}
 }
