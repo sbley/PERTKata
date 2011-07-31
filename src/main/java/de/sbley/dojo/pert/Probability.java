@@ -6,4 +6,8 @@ public class Probability {
 		return (optimistic + 4 * nominal + pessimistic) / 6F;
 	}
 
+	public static float deviation(int optimistic, int nominal, int pessimistic) {
+		return 0;
+	}
+
 }
