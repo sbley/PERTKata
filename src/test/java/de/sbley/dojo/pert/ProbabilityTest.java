@@ -18,8 +18,8 @@ public class ProbabilityTest {
 	}
 
 	@Test
-	public void expectationIs2IfEstimatesAreO3N1P5() throws Exception {
-		assertThat(Probability.expectation(3, 1, 5), is(2F));
+	public void expectationIs2IfEstimatesAreO1N2P3() throws Exception {
+		assertThat(Probability.expectation(1, 2, 3), is(2F));
 	}
 
 	@Test
