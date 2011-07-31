@@ -21,4 +21,9 @@ public class ProbabilityTest {
 	public void expectationIs2IfEstimatesAreO3N1P5() throws Exception {
 		assertThat(Probability.expectation(3, 1, 5), is(2F));
 	}
+
+	@Test
+	public void expectationIs3IfEstimatesAreO1N3P5() throws Exception {
+		assertThat(Probability.expectation(1, 3, 5), is(3F));
+	}
 }
