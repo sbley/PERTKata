@@ -31,4 +31,9 @@ public class ProbabilityTest {
 	public void deviationIs0IfAllEstimatesAre0() throws Exception {
 		assertThat(Probability.deviation(0, 0, 0), is(0F));
 	}
+
+	@Test
+	public void deviationIs1IfEstimatesAreO1N3P7() throws Exception {
+		assertThat(Probability.deviation(1, 3, 7), is(1F));
+	}
 }
