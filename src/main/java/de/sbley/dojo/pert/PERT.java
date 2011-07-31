@@ -10,15 +10,15 @@ import java.util.Scanner;
 
 public class PERT {
 
+	public Estimate estimate(Reader reader) {
+		Scanner scanner = new Scanner(reader);
+		return estimate(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
+	}
+
 	public Estimate estimate(int optimistic, int nominal, int pessimistic) {
 		return new Estimate(Probability.expectation(optimistic, nominal,
 				pessimistic), Probability.deviation(optimistic, nominal,
 				pessimistic));
-	}
-
-	public Estimate estimate(Reader reader) {
-		Scanner scanner = new Scanner(reader);
-		return estimate(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
 	}
 
 	public void write(Estimate estimate, Writer writer) throws IOException {
@@ -26,6 +26,21 @@ public class PERT {
 				estimate.getExpectation(), estimate.getDeviation()));
 	}
 
+	/**
+	 * Reads your estimates from console input (optimistic, nominal and
+	 * pessimistic estimate; space-separated) and outputs expected duration and
+	 * standard variation to console.
+	 * <p>
+	 * Example:
+	 * </p>
+	 * 
+	 * <pre>
+	 * $ 1 2 3
+	 * $ m = 2.0, s = 0.3
+	 * </pre>
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		Reader reader = new InputStreamReader(System.in);
 		Writer writer = new OutputStreamWriter(System.out);
